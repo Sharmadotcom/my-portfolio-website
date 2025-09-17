@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --background-start: #432597;
+            --background-start: #341246;
             --background-end: #4d223f;
             --text-color: #f0f0f0;
             --card-background: rgba(41, 41, 41, 0.8);
@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* New Sidebar Styles */
+        /* Sidebar Styles */
         .sidebar {
             height: 100%;
             width: var(--sidebar-width);
@@ -73,6 +73,21 @@
             color: var(--accent-color);
             background: rgba(240, 222, 61, 0.1);
         }
+        
+        /* Menu Button for Mobile */
+        .menu-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 150;
+            cursor: pointer;
+            background: var(--accent-color);
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
         /* Main content styles */
         .main-content {
@@ -87,16 +102,8 @@
             padding: 40px 0;
             text-align: center;
         }
-        
-        /* Existing component styles updated for new layout */
-        header {
-            background: none;
-            padding: 0;
-            border-bottom: none;
-            animation: none;
-            margin: 0;
-        }
 
+        /* Existing component styles */
         .project-card {
             background: var(--card-background);
             padding: 30px;
@@ -165,9 +172,45 @@
                 transform: translateX(0);
             }
         }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .sidebar.is-open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-top: 80px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 20px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+            
+            .project-card h3 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
 
     <div class="sidebar">
         <h1>Sarvesh Sharma</h1>
@@ -181,8 +224,6 @@
 
     <div class="main-content">
         <div class="container">
-            <header>
-            </header>
             <h2>My Projects</h2>
             
             <div class="project-card">
@@ -203,6 +244,13 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('is-open');
+        }
+    </script>
 
 </body>
 </html>
