@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --background-start: #432597;
+            --background-start: #341246;
             --background-end: #4d223f;
             --text-color: #f0f0f0;
             --card-background: rgba(41, 41, 41, 0.8);
@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* New Sidebar Styles */
+        /* Sidebar Styles */
         .sidebar {
             height: 100%;
             width: var(--sidebar-width);
@@ -73,6 +73,21 @@
             color: var(--accent-color);
             background: rgba(240, 222, 61, 0.1);
         }
+        
+        /* Menu Button for Mobile */
+        .menu-btn {
+            display: none; /* Hide on desktop */
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 150;
+            cursor: pointer;
+            background: var(--accent-color);
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
         /* Main content styles */
         .main-content {
@@ -88,7 +103,7 @@
             text-align: center;
         }
 
-        /* Existing component styles updated for new layout */
+        /* Existing component styles */
         header {
             background: none;
             padding: 0;
@@ -174,7 +189,7 @@
             background: #fff;
         }
 
-        /* Keyframes for new and existing animations */
+        /* Keyframes for animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -227,9 +242,63 @@
                 transform: translateX(0);
             }
         }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in-out;
+                z-index: 100;
+            }
+
+            .sidebar.is-open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-top: 80px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 20px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+            
+            .hero-section {
+                padding: 40px 0;
+            }
+
+            .hero-section h2 {
+                font-size: 1.8em;
+            }
+
+            .hero-section p {
+                font-size: 1em;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-me {
+                padding: 20px;
+            }
+            
+            .about-me h2 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
 
     <div class="sidebar">
         <h1>Sarvesh Sharma</h1>
@@ -244,7 +313,7 @@
     <div class="main-content">
         <div class="container">
             <header>
-                </header>
+            </header>
             
             <section class="hero-section">
                 <h2>Aspiring Cybersecurity Professional</h2>
@@ -256,11 +325,17 @@
                 <img src="profile-img.jpg" alt="Profile Picture" class="profile-img">
                 <div class="about-me">
                     <h2>About Me</h2>
-                    <p>Hello! My name is Sarvesh Sharma. I am a Student with a passion for Coding. Also an enthusiastic and dedicated B.Tech Computer Science student specializing in Cybersecurity at VIT Bhopal, with a strong foundation in core computer science concepts. Eager to apply theoretical knowledge and develop practical skills in cybersecurity to contribute to real-world projects and challenges.</p>
+                    <p>Hello! My name is Sarvesh Sharma. I am a Student with a passion for Coding. Also an enthusiastic and dedicated B.Tech Computer Science student specializing in Cybersecurity at VIT Bhopal, with a strong foundation in core computer science concepts. Eager to apply theoretical knowledge and develop practical skills to contribute to real-world projects and challenges.</p>
                 </div>
             </section>
         </div>
     </div>
-
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('is-open');
+        }
+    </script>
 </body>
 </html>
