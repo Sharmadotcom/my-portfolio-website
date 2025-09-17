@@ -195,6 +195,36 @@
                 opacity: 1;
             }
         }
+        
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .sidebar.is-open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-top: 80px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 20px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+            
+            .resume-section {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
