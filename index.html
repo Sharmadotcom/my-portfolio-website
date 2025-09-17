@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvesh Sharma - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-start: #432597;
+            --background-end: #4d223f;
+            --text-color: #f0f0f0;
+            --card-background: rgba(41, 41, 41, 0.8);
+            --accent-color: #f0de3d;
+            --sidebar-width: 250px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* New Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: var(--sidebar-width);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-background);
+            padding-top: 50px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideInFromLeft 1s ease-out;
+            z-index: 100;
+        }
+
+        .sidebar h1 {
+            margin: 0 0 20px 0;
+            font-size: 2.5em;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .sidebar a:hover {
+            color: var(--accent-color);
+            background: rgba(240, 222, 61, 0.1);
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Existing component styles updated for new layout */
+        header {
+            background: none;
+            padding: 0;
+            border-bottom: none;
+            animation: none;
+            margin: 0;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(240, 222, 61, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(240, 222, 61, 0.8);
+        }
+
+        .about-me {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            animation: slideInFromBottom 1s ease-out;
+        }
+
+        .about-me h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section {
+            padding: 80px 0;
+            animation: fadeInScale 1s ease-out 0.5s both;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
+
+        /* Keyframes for new and existing animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1>Sarvesh Sharma</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <header>
+                </header>
+            
+            <section class="hero-section">
+                <h2>Aspiring Cybersecurity Professional</h2>
+                <p>An enthusiastic and dedicated B.Tech student with a strong foundation in computer science and a passion for cybersecurity. Eager to apply theoretical knowledge and develop practical skills to contribute to real-world projects and challenges.</p>
+                <a href="projects.html" class="cta-button">View My Projects</a>
+            </section>
+            
+            <section class="profile-section">
+                <img src="profile-img.jpg" alt="Profile Picture" class="profile-img">
+                <div class="about-me">
+                    <h2>About Me</h2>
+                    <p>Hello! My name is Sarvesh Sharma. I am a Student with a passion for Coding. Also an enthusiastic and dedicated B.Tech Computer Science student specializing in Cybersecurity at VIT Bhopal, with a strong foundation in core computer science concepts. Eager to apply theoretical knowledge and develop practical skills in cybersecurity to contribute to real-world projects and challenges.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>

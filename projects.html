@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvesh Sharma - Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-start: #432597;
+            --background-end: #4d223f;
+            --text-color: #f0f0f0;
+            --card-background: rgba(41, 41, 41, 0.8);
+            --accent-color: #f0de3d;
+            --sidebar-width: 250px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* New Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: var(--sidebar-width);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-background);
+            padding-top: 50px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideInFromLeft 1s ease-out;
+            z-index: 100;
+        }
+
+        .sidebar h1 {
+            margin: 0 0 20px 0;
+            font-size: 2.5em;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .sidebar a:hover {
+            color: var(--accent-color);
+            background: rgba(240, 222, 61, 0.1);
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Existing component styles updated for new layout */
+        header {
+            background: none;
+            padding: 0;
+            border-bottom: none;
+            animation: none;
+            margin: 0;
+        }
+
+        .project-card {
+            background: var(--card-background);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            animation: fadeInScale 1s ease-out;
+        }
+        
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.7em;
+            color: #fff;
+        }
+
+        .project-card p {
+            margin: 0 0 15px 0;
+        }
+
+        .project-card .tags {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .project-card .tags li {
+            background: rgba(240, 222, 61, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .project-card .links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .project-card .links a:hover {
+            color: #fff;
+        }
+        
+        /* Keyframes for animations */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1>Sarvesh Sharma</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <header>
+            </header>
+            <h2>My Projects</h2>
+            
+            <div class="project-card">
+                <h3>Phishing-Detection for Email,Url,SMS</h3>
+                <p>A brief, engaging description of your project. Explain what it does, what problem it solves, and why you built it. Keep it concise but informative.</p>
+                <p><strong>Technologies Used:</strong></p>
+                <ul class="tags">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Flask</li>
+                </ul>
+                <div class="links">
+                    <a href="https://phishing-detection-final-6eufatepkdk9gh6qkane2e.streamlit.app" target="_blank">Website Link</a>
+                    <a href="https://github.com/Sharmadotcom/Phishing-Detection-Email-Url-SMS-" target="_blank">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

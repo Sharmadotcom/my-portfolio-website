@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvesh Sharma - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-start: #432597;
+            --background-end: #4d223f;
+            --text-color: #f0f0f0;
+            --card-background: rgba(41, 41, 41, 0.8);
+            --accent-color: #f0de3d;
+            --sidebar-width: 250px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end));
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* New Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: var(--sidebar-width);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-background);
+            padding-top: 50px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideInFromLeft 1s ease-out;
+            z-index: 100;
+        }
+
+        .sidebar h1 {
+            margin: 0 0 20px 0;
+            font-size: 2.5em;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .sidebar a:hover {
+            color: var(--accent-color);
+            background: rgba(240, 222, 61, 0.1);
+        }
+        
+        /* Main content styles */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Existing component styles updated for new layout */
+        header {
+            background: none;
+            padding: 0;
+            border-bottom: none;
+            animation: none;
+            margin: 0;
+        }
+        
+        .contact-section {
+            background: var(--card-background);
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideInFromBottom 1s ease-out;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            font-size: 1.2em;
+            color: var(--text-color);
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        /* Keyframes for animations */
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1>Sarvesh Sharma</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <header>
+            </header>
+            <section class="contact-section">
+                <h2>Get In Touch</h2>
+                <p>I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
+                
+                <div class="contact-details">
+                    <p><strong>Email:</strong> <a href="mailto:sharmasarvesh390@gmail.com">sharmasarvesh390@gmail.com</a></p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sarvesh-sharma-333b142b0/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/_.shawarma_/?next=%2F" target="_blank">Instagram</a>
+                    <a href="https://github.com/Sharmadotcom" target="_blank">GitHub</a>
+                    <a href="https://leetcode.com/u/Sharmadotcom/" target="_blank">Leetcode</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
